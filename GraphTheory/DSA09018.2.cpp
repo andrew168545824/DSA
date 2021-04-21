@@ -36,6 +36,7 @@ vi adj[1001];
 vi num,low,ap;
 bool used[1001];
 
+#Articulation point using better algorithms 
 
 void inp(){
 	cin>>n>>m;
