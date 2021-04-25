@@ -32,24 +32,21 @@ void FileIO(){
 }
 
 void ql(ll tu,ll mau){
-	if(tu==1){
-		cout<<"1/"<<mau<<"\n";
+	if(mau%tu==0){
+		cout<<1<<"/"<<mau/tu<<endl;
 		return;
 	}
-	ll x=mau/tu+1;
-	cout<<"1/"<<x<<" + ";
-	ll tumoi=tu*x-mau;
+	ll x = mau/tu+1;
+	cout<<1<<"/"<<x<<" + ";
 	ll maumoi=mau*x;
-	ll g=gcd(tumoi,maumoi);
-	ql(tumoi/g,maumoi/g);
+	int tumoi=mau*x-mau;
+	ql(tumoi,maumoi);
 }
-
 
 int main(){
 	int t;cin>>t;
 	while(t--){
-		ll t,m;cin>>t>>m;
-		ll g=gcd(t,m);
-		ql(t/g,m/g);
+		ll tu,mau;cin>>tu>>mau;
+		ql(tu,mau);
 	}
 }
