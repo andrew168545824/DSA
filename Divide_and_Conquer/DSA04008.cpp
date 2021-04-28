@@ -47,7 +47,7 @@ void mul(ll a[2][2], ll b[2][2]){
 	a[0][1]=c[0][1];
 	a[1][1]=c[1][1];
 }
-
+#Binary exponentiation using recursion
 void power(ll f[2][2],int n){
 	if(n==0||n==1)
 		return;
@@ -57,6 +57,18 @@ void power(ll f[2][2],int n){
 	if(n%2) mul(f,tmp);
 }
 
+#Binary exponentiation using while loop
+void power2(ll a[2][2], int n){
+	ll res[2][2]={{1,0}, {0, 1}};
+	while(n){
+		if(n%2==1){
+			nhan(res,a);
+		}
+		nhan(a,a);
+		n/=2;
+	}
+	cout<<res[0][1]<<endl;
+}
 
 int main(){
 	//FileIO();
@@ -66,5 +78,6 @@ int main(){
 		ll f[2][2]={{1,1},{1,0}};
 		power(f,n);
 		cout<<f[0][1]<<endl;
+		//power2(a,n);
 	}
 }
