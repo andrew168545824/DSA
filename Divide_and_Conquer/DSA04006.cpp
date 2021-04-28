@@ -30,7 +30,7 @@ void FileIO(){
 	freopen("input.txt","r", stdin);
 	freopen("output.txt","w",stdout);
 }
-
+#Brute force 
 ll count(int n, ll l, ll r){
 	//cout<<n<<" "<<l<<" "<<r<<endl;
 	if(l>r)
@@ -71,7 +71,7 @@ int find(ll pos, ll n, int idx){
 		return find(pos, n/2, idx-1);
 	else if(pos==power[idx])
 		return n%2;
-	return find(power[idx]-pos+power[idx], n/2, idx-1);
+	return find(pos-power[idx], n/2, idx-1);
 }
 
 int main(){
